@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    cin>>a;
+    while(a--){
+        int x,y,k;
+        cin>>x>>y;
+        k=x+y;
+        if(k%2==0){
+            cout<<"Bob"<<endl;
+            
+        }
+        else{
+            cout<<"Alice"<<endl;
+        }
+    }
+
+    
+}
