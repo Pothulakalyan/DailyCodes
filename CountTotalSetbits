@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    
+   int a,cnt=0;
+   cin>>a;
+   for(int i=1;i<=a;i++)
+   {
+       for(int j=0;j<32;j++)
+       {
+           if(((1<<j)&i)>0)
+           {
+               cnt+=1;
+           }
+       }
+   }
+   cout<<cnt;
+   
+    
+}
