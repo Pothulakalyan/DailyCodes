@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    
+    int a,k,m;
+    cin>>a>>k;
+    m=((1<<k)|a);
+    cout<<m;
+   
+    
+}
