@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    cin>>a;
+    while(a--)
+    {
+        int n;
+        cin>>n;
+        vector<int>ve(n+1,0);
+        for(int i=0;i<=n;i++)
+        {
+            ve.push_back(i);
+        }
+        ve[0]=1;
+        ve[1]=1;
+        for(int i=2;i<=n;i++)
+        {
+            for(int j=i*i;j<=n;j+=i)
+            {
+                ve[j]=1;
+            }
+        }
+        //for(auto it:ve) cout<<it<<" ";
+        vector<int>ans  ;
+        for(int i=2;i<=n;i++)
+        {
+            if(ve[i]==0)
+            {
+                ans.push_back(i);
+            }
+        }
+        for(int i=0;i<ans.size();i++)
+        {
+            cout<<ans[i]<<" ";
+        }
+        //for(auto it:ans) cout<<it<<" ";
+        
+        int k=ans[0];
+        int cnt=0;
+        for(int i=1;i<ans.size()-1;i++)
+        {
+            if((k+ans[i])==ans[i+1])
+            {
+                cnt+=1;
+            }
+            
+        }
+        cout<<cnt;
+        
+        
+    }
+}
