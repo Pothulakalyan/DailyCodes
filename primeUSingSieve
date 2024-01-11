@@ -1,0 +1,28 @@
+ vector<int> sieveOfEratosthenes(int N)
+    {
+        // Write Your Code her
+	    vector<int>vt(N,0);
+	    for(int i=0;i<=N;i++)
+	    {
+	        vt.push_back(i);
+	    }
+	    vt[2]=0;
+	    vt[3]=0;
+	    for(int i=2;i<=N;i++)
+	    {
+	        
+	        for(int j=i*i;j<=N;j+=i)
+	        {
+	            vt[j]=1;
+	        }
+	    }
+	    vector<int>ans;
+	    for(int i=2;i<=N;i++)
+	    {
+	        if(vt[i]==0)
+	        {
+	            ans.push_back(i);
+	        }
+	    }
+	    return ans;
+    }
