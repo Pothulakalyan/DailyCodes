@@ -1,0 +1,55 @@
+/*#include <bits/stdc++.h>
+using namespace std;
+
+long long sum(int n) {
+    long long s = 0;
+
+    for (int i = 1; i <= sqrt(n); ++i) {
+        if (n % i == 0) {
+            if (n / i == i)
+                s += i;
+            else
+                s += i + n / i;
+        }
+    }
+
+    return s;
+}
+
+int main() {
+    int l, r;
+    cin >> l >> r;
+    long long total = 0;
+
+    for (int i = l; i <= r; ++i) {
+        total += sum(i);
+    }
+
+    cout << total;
+}*/
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        
+        int a,b,c,d,e,f,g,h;
+        cin>>a>>b;
+        cin>>c>>d;
+        cin>>e>>f;
+        cin>>g>>h;
+        int q=max(a,c);
+        int r=max(e,g);
+        int s=min(a,c);
+        int t=min(e,g);
+        int w=max()
+        int x=min
+        
+        
+        
+        
+    }
+}
