@@ -38,4 +38,13 @@ int main()
     cout<<endl;
     sort(s.rbegin(),s.rend());
     cout<<s;
+    /*
+        string s;
+    getline(cin,s);
+    for(auto it:s)
+    {
+        cout<<char(tolower(it));
+    }
+        */
+
 }
