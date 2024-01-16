@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+void stringfunction(string s)
+{
+    cout<<s;
+    for(auto it:s)
+    {
+        cout<<it<<" ";
+    }
+    /*if(s.find(1)=='k')
+    {
+        cout<<"YES";
+    }*/
+    
+}
+int main()
+{
+    /*char ch[]="kalyan";
+    for(auto it:ch)
+    {
+        cout<<it<<" ";
+    }
+    cout<<endl;
+    char che[]={'a','b','c','d'};
+    for(auto it:che)
+    {
+        cout<<it<<" ";
+    }
+    cout<<endl;*/
+    
+    string s;
+    getline(cin,s);
+    cout<<s;
+    stringfunction(s);
+    cout<<endl;
+    sort(s.begin(),s.begin()+6);
+    cout<<s;
+    cout<<endl;
+    sort(s.rbegin(),s.rend());
+    cout<<s;
+}
