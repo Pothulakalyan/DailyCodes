@@ -1,0 +1,29 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        int f=0,f1=0;
+        map<int,int>mpp;
+        map<int,int>mpp1;
+        for(int i=0;i<arr.size();i++)
+        {
+            mpp[arr[i]]++;
+        }
+        for(auto it: mpp) cout<<it.first<<" "<<it.second<<endl;
+        for(auto it:mpp)
+        {
+            mpp1[it.second]++;
+        }
+        cout<<"--------";
+        for(auto it: mpp1) cout<<it.first<<" "<<it.second<<endl;
+        for(auto it:mpp1)
+        {
+            if(it.second>1)
+            {
+                f=1;
+            }
+        }
+        if(f==1) return false;
+        return true;
+        
+    }
+};
