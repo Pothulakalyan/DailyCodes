@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n,rem,rev=0,cnt=0,r=0,re,f=0,c=0,f1=0;
+	cin>>n;
+	while(n!=0)
+	{
+	    rem=n%10;
+	    if(rem==0)
+	    {
+	        c+=1;
+	        if(c==2)
+	        {
+	            f=1;
+	            break;
+	        }
+	    }
+	    rev=rev*10+rem;
+	    cnt+=1;
+	    n/=10;
+	    if(cnt==2)
+	    {
+	        break;
+	    }
+	}
+	
+	if(f==1)
+	{
+	    cout<<"K00";
+	}
+	else{
+	    while(rev!=0){
+	    re=rev%10;
+	    if(re==0)
+	    {
+	        f1=1;
+	    }
+	    r=r*10+re;
+	    rev/=10;
+	    }
+	    if(f1==1)
+	    {
+	        cout<<"K0"+to_string(r);
+	    }
+	    else
+	    {
+	        cout<<"K"+to_string(r);  
+	    }
+	      
+	}
+}
