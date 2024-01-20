@@ -1,0 +1,30 @@
+vector<int> sortA1ByA2(vector<int> A1, int N, vector<int> A2, int M) 
+    {
+        //Your code here
+        map<int,int>mpp;
+        vector<int>ve;
+        for(int i=0;i<N;i++)
+        {
+            mpp[A1[i]]++;
+        }
+        for(int i=0;i<M;i++)
+        {
+            if(mpp.find(A2[i])!=mpp.end())
+            {
+                int k=mpp[A2[i]];
+                int l=A2[i];
+                for(int i=0;i<k;i++)
+                {
+                    ve.push_back(l);
+                }
+                mpp.erase(A2[i]);
+            }
+            
+        }
+        for(auto it:mpp)
+        {
+            ve.insert(ve.end(),it.second,it.first);
+        }
+        return ve;
+        
+    } 
