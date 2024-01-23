@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>>ans;
+        vector<int>ve;
+        int k=nums.size();
+        int l=pow(2,k);
+        for(int i=0;i<l;i++)
+        {
+            for(int j=0;j<k;j++)
+            {
+                if(i&(1<<j))
+                {
+                    ve.push_back(nums[j]);
+                }   
+            }
+            ans.push_back(ve);
+            ve.clear();
+        }
+        return ans;
+    }
+};
