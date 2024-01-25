@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+void mom()
+{
+    cout<<"hlo chinna";
+    hamom();
+}
+void hamom()
+{
+    cout<<"Goto glossories";
+    glossories();
+}
+void glossories()
+{
+    cout<<"bring glossories";
+}
+int main()
+{
+    mom();
+}
