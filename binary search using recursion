@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int binarysearch(int arr[],int l,int h,int tr)
+{
+    if(l>h) return -1;
+    int mid=(l+h)/2;
+    if(arr[mid]==tr) return mid;
+    if(arr[mid]>tr)
+    {
+        return binarysearch(arr,l,mid-1,tr);
+    }
+    else
+    {
+        return binarysearch(arr,mid+1,h,tr);
+    }
+}
+int main()
+{
+    int a[]={1,2,3,4,5,6};
+    int start,end,target,k;
+    start=0;
+    end=sizeof(a)/sizeof(int);
+    target=34;
+    k=binarysearch(a,start,end,target);
+    cout<<k;
+    
+}
