@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int fibonacii(int n)
+{
+    //base case
+    if(n==0 || n==1) return n;
+    else
+    {
+        return fibonacii(n-1)+fibonacii(n-2);
+    }
+}
+int main()
+{   
+    int a=7;
+    int k=fibonacii(a);
+    cout<<k;
+}
