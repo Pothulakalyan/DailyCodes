@@ -2,15 +2,18 @@
 using namespace std;
 int binarysearch(int arr[],int l,int h,int tr)
 {
+    //base case
     if(l>h) return -1;
     int mid=(l+h)/2;
     if(arr[mid]==tr) return mid;
     if(arr[mid]>tr)
     {
+        //recursive case
         return binarysearch(arr,l,mid-1,tr);
     }
     else
     {
+        //recursive case
         return binarysearch(arr,mid+1,h,tr);
     }
 }
