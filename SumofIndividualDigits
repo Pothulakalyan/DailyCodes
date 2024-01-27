@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int sumofIndividualNumbers(int n)
+{
+    if(n==0) return 0;
+    return sumofIndividualNumbers(n%10)+sumofIndividualNumbers(n/10);
+}
+int main()
+{
+    int a;
+    cin>>a;
+    int k=sumofIndividualNumbers(a);
+}
