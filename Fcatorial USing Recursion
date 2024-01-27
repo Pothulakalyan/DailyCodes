@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int function(int n)
+{
+    if(n==1) return n;
+    return n*function(n-1);
+
+}
+int main()
+{
+    int a=5;
+    int k=function(a);
+    cout<<k;
+}
