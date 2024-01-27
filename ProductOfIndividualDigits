@@ -12,3 +12,11 @@ int main()
     cin>>a;
     int k=sumofIndividualNumbers(a);
 }
+
+Small Concept
+---------
+N-- VS --N
+
+(N--) means Pass The Value and Subtract second
+(--N) Means Subtract first and pass the value
+
