@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int factorialByStriver(int n)
+{
+    if(n<=1) return n;
+    int last=factorialByStriver(n-1);
+    int secondlast=factorialByStriver(n-2);
+    return last+secondlast;
+}
+
+int main() {
+	// your code goes here
+	//string s="madam";
+	//int n=s.size();
+	//cout<<ispalin(0,s,n);
+	int k=6;
+	cout<<factorialByStriver(k);
+}
