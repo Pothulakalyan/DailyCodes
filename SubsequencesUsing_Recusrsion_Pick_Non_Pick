@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+void fun(int indx,int *arr,vector<int>&temp,int n)
+{
+    if(indx==n)
+    {
+        for(auto it:temp)
+        {
+            cout<<it<<" ";
+        }
+        cout<<"\n";
+        return;
+    }
+    temp.push_back(arr[indx]);
+    //pickcing element recursive case 
+    fun(indx+1,arr,temp,n);
+    temp.pop_back();
+    //Not picking case
+    fun(indx+1,arr,temp,n);
+}
+
+int main() {
+
+	int arr[]={1,2,3};
+	int size=sizeof(arr)/sizeof(arr[0]);
+    vector<int>ve;
+    fun(0,arr,ve,size);
+}
