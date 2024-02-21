@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
+
+    int a=11;
+
+
+    //Used for binary length of a number
+    int b=ceil(log2(a));
+
+    int Least2pow=(1 << (b-1));
+    cout<<"Leaset 2 Power "<<Least2pow<<endl;
+
+    //Next 2 Power for a given Nunmber
+    int Next2Pow=(1<<b);
+    cout<<"Next 2 Power "<<Next2Pow<<endl;
+
+    //Used for Decimal Length of a number
+    cout<<"Decimal Length "<<ceil(log10(a));
+}\
