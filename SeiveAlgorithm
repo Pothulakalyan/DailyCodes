@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define pb push_back
+#define mp make_pair
+#define MOD 1000000007 
+Vector<ll>Primes(N,1);
+void Sieve(){
+    Prime[0]=0;
+    Prime[1]=0;
+    for(int i=2;i*i<N;i++)
+    {
+        if(Primes[i]==1)
+        {
+            for(int j=i*i;j<N;j+=i)
+            {
+                Primes[j]=0;
+            }
+        }
+    }
+}
+vector<ll>GetPrimes(ll r)
+{
+    vector<ll>ds;
+    for(int i=2;i*i<=r;i++)
+    {
+        if(Primes[i]==1) ds.pb(i);
+    }
+    return ds;
+}
+int main()
+{
+    ll l,r;
+    cin>>l,r;
+    ll len=r-l+1;
+    vector<ll>Segmentseive(len,l);
+    vector<ll>HelpPrimes;
+    HelpPrimes=GetPrimes(r);
+
+    //{2,3,5,6}
+    //110 134
+    //0   1    2   3   4    5
+    //110 111 112 ...
+    for(auto i:HelpPrimes)
+    {
+        //find the first multiple of i to l
+        ll fm = (l/i)*i;
+        if(fm<l) fm+=i;
+        for(int j=max((i*i),fm);j<r;j+=fm)
+        {
+            Segmentseive[fm-l]=0;
+        }
+    }
+}
