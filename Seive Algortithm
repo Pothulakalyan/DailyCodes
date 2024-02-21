@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+void Input()
+{
+     #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
+}
+int N=1e6+1;
+vector<ll> Prime(N,1);
+void Generate_Sieve(int n)
+{
+    Primes[0]=0;
+    Primes[1]=0;
+    for(int i=2;i*i<n;i++)
+    {
+        if(Primes[i]==1){
+            for(int j=i*i;j<N;j+=i)
+            {
+                Primes[j]=0;
+            }
+        }
+    }
+}
+int main()
+{
+    Input();
+    Generate_Sieve(Primes);
+    ll t;
+    cin>>t;
+    while (t--)
+    {
+        ll n;
+        cin>>n;
+        if(Prime(n)==1) cout<<"yes";
+        else cout<<"no";
+    }
+    
+}
