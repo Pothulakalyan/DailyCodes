@@ -80,12 +80,10 @@ Node *removeDuplicates(Node *head)
              temp1->next=temp2->next;
              temp2=temp2->next;
             }
-            else
-            {
+            else{
                 temp1=temp1->next;
                 temp2=temp2->next;
             }
-         
     }
     if(temp1->data==temp2->data)
     {
