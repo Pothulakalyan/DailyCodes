@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+void fun(vector<int>&ve,int i){
+    if(i>=ve.size()/2){
+        return;
+    }
+    swap(ve[i],ve[ve.size()-i-1]);
+    fun(ve,i+1);
+    
+}
+int main(){
+    vector<int>ve={1,2,3,4,5,7,8,9,5};
+    fun(ve,0);
+    for(auto it:ve){
+        cout<<it<<" ";
+    }
+}
