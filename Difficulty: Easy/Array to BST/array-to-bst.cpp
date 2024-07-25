@@ -53,6 +53,15 @@ bool isBalanced(Node* root) {
     return true;
 }
 
+void inorder(Node* root, vector<int>& v) {
+    if (root == NULL)
+        return;
+
+    inorder(root->left, v);
+    v.push_back(root->data);
+    inorder(root->right, v);
+}
+
 
 // } Driver Code Ends
 /*
@@ -70,18 +79,19 @@ struct Node {
 
 class Solution {
   public:
-    Node * BST(int l,int h,vector<int>&nums){
+    Node* BST(int l,vector<int>&nums, int h){
         if(l>h) return NULL;
         int mid=(l+h)/2;
-        Node* nn=new Node(nums[mid]);
-        nn->left= BST(l,mid-1,nums);
-        nn->right=BST(mid+1,h,nums);
+        Node* nn= new Node(nums[mid]);
+        nn->left=BST(l,nums,mid-1);
+        nn->right=BST(mid+1,nums,h);
+        
+        
         
     }
     Node* sortedArrayToBST(vector<int>& nums) {
         // Code here
-        Node* ans=BST(0,nums.size()-1,nums);
-        return ans;
+        return BST(0,nums,nums.size()-1);
     }
 };
 
@@ -103,7 +113,10 @@ int main() {
 
         Solution ob;
         Node* a = ob.sortedArrayToBST(arr);
-        if (!isValidBST(a)) {
+        vector<int> v;
+        inorder(a, v);
+
+        if (!isValidBST(a) or v != arr) {
             cout << "false" << endl;
             return 0;
         }
