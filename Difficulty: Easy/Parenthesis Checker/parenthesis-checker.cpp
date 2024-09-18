@@ -14,29 +14,20 @@ class Solution
         // Your code here
         stack<char>st;
         for(int i=0;i<x.size();i++){
-            if(x[i]=='{' or x[i]=='(' or x[i]=='['){
+            if(st.empty()){
                 st.push(x[i]);
             }
+            else if((x[i]==')' and st.top()=='(') or(x[i]=='}' and st.top()=='{') or (x[i]==']' and st.top()=='[')){
+                st.pop();
+            }
             else{
-                if(!st.empty() &&  st.top()=='{' && x[i]=='}'){
-                    st.pop();
-                }
-                else if(!st.empty() && st.top()=='(' &&  x[i]==')'){
-                    st.pop();
-                }
-                else if(!st.empty()  &&  st.top()=='[' &&  x[i]==']'){
-                    st.pop();
-                }
-                else{
-                    return false;
-                }
+                st.push(x[i]);
             }
         }
-        if(st.size()==0) return true;
-        return false;
-
+        if(st.empty()) return true;
+        else return false;
+        
     }
-
 };
 
 //{ Driver Code Starts.
