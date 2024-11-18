@@ -12,18 +12,20 @@ class Solution {
     // Function to rotate an array by d elements in counter-clockwise direction.
     void rotateArr(vector<int>& arr, int d) {
         // code here
-        int n=arr.size();
-        int k=d%n;
-        vector<int>ve;
-        for(int i=k;i<n;i++){
-            ve.push_back(arr[i]);
+        int si,rt;
+        si=arr.size();
+        rt=d%si;
+        vector<int>ans;
+        for(int i=rt;i<arr.size();i++){
+            ans.push_back(arr[i]);
         }
-        for(int i=0;i<k;i++){
-            ve.push_back(arr[i]);
+        for(int i=0;i<d;i++){
+            ans.push_back(arr[i]);
         }
-        for(int i=0;i<n;i++){
-            arr[i]=ve[i];
+        for(int i=0;i<arr.size();i++){
+            arr[i]=ans[i];
         }
+        
     }
 };
 
@@ -53,6 +55,7 @@ int main() {
         d = crr[0];
         int n = arr.size();
         Solution ob;
+        // calling rotateArr() function
         ob.rotateArr(arr, d);
 
         // printing the elements of the array
@@ -60,8 +63,10 @@ int main() {
             cout << arr[i] << " ";
         }
         cout << endl;
+
+        cout << "~"
+             << "\n";
     }
     return 0;
 }
-
 // } Driver Code Ends
