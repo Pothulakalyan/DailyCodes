@@ -8,23 +8,27 @@ class Solution {
   public:
     vector<int> subarraySum(vector<int> &arr, int target) {
         // code here
-        int iterating_index=0;
-        long long int curr_sum=0;
+        int st=0;
+        int cur_sum=0;
         vector<int>ve;
         for(int i=0;i<arr.size();i++){
-            curr_sum+=arr[i];
-            while(curr_sum>target && iterating_index<i){
-                curr_sum-=arr[iterating_index];
-                iterating_index+=1;
+            cur_sum+=arr[i];
+            while(cur_sum>target && st<i){
+                cur_sum-=arr[st];
+                st++;
             }
-            if(curr_sum==target){
-                ve.push_back(iterating_index+1);
-                ve.push_back(i+1);
-                return ve;
+            if(cur_sum==target){
+                ve.push_back(st+=1);
+                ve.push_back(i+=1);
+                break;
+                
             }
         }
-        ve.push_back(-1);
-        return ve;
+        if(ve.size()==0){
+            ve.push_back(-1);
+            return ve;
+        }
+
     }
 };
 
