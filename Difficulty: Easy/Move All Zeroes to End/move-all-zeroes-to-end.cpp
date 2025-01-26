@@ -9,24 +9,17 @@ class Solution {
   public:
     void pushZerosToEnd(vector<int>& arr) {
         // code here
-        vector<int>v1;
-        int cnt=0;
+        int start=-1;
         for(int i=0;i<arr.size();i++){
-            if(arr[i]==0){
-                cnt+=1;
+            if(arr[i]!=0){
+                arr[start+1]=arr[i];
+                start+=1;
             }
-            else{
-                v1.push_back(arr[i]);
-            }
+            
         }
-        // sort(v1.begin(),v1.end());
-        for(int i=0;i<cnt;i++){
-            v1.push_back(0);
+        for(int i=start+1;i<arr.size();i++){
+            arr[i]=0;
         }
-        for(int i=0;i<arr.size();i++){
-            arr[i]=v1[i];
-        }
-        
     }
 };
 
@@ -51,6 +44,7 @@ int main() {
             cout << arr[i] << " ";
         }
         cout << "\n";
+        cout << "~" << endl;
     }
     return 0;
 }
