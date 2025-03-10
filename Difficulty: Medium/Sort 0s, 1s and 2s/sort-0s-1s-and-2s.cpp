@@ -11,20 +11,20 @@ class Solution {
         //using two pointers by GFG Practice youtube channel
         int n=arr.size();
         int l=0;
-        int i=0;
         int r=n-1;
+        int i=0;
         while(i<=r){
             if(arr[i]==1){
-                i++;
+                i+=1;
             }
             else if(arr[i]==2){
                 swap(arr[i],arr[r]);
-                r--;
+                r-=1;
             }
-            else{
+            else if(arr[i]==0){
                 swap(arr[i],arr[l]);
-                l++;
-                i++;
+                l+=1;
+                i+=1;
             }
         }
     }
