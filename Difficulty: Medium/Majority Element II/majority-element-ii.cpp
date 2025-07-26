@@ -1,56 +1,32 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
 class Solution {
   public:
-    // Function to find the majority elements in the array
+    void selection_sorting(vector<int>&ans){
+        for(int i=0;i<ans.size();i++){
+            int min=ans[i];
+            int min_ind=i;
+            for(int j=i+1;j<ans.size();j++){
+                if(min>ans[j]){
+                    min=ans[j];
+                    min_ind=j;
+                }
+            }
+            swap(ans[i],ans[min_ind]);
+        }
+    }
     vector<int> findMajority(vector<int>& arr) {
-        // Your code goes here
-        vector<int>ve;
+        // Code here
+        vector<int>ans;
+        int one_third=arr.size()/3;
         map<int,int>mpp;
-        int n,k;
         for(int i=0;i<arr.size();i++){
             mpp[arr[i]]++;
         }
-        n=arr.size();
-        k=n/3;
         for(auto it:mpp){
-            if(it.second>k){
-                ve.push_back(it.first);
+            if(it.second>one_third){
+                ans.push_back(it.first);
             }
         }
-        return ve;
+        selection_sorting(ans);
+        return ans;
     }
 };
-
-//{ Driver Code Starts.
-int main() {
-    int t;
-    cin >> t;
-    cin.ignore();
-    while (t--) {
-
-        string s;
-        getline(cin, s);
-        stringstream ss(s);
-        vector<int> nums;
-        int num;
-        while (ss >> num) {
-            nums.push_back(num);
-        }
-        Solution ob;
-        vector<int> ans = ob.findMajority(nums);
-        if (ans.empty()) {
-            cout << "[]";
-        } else {
-            for (auto &i : ans)
-                cout << i << " ";
-        }
-        cout << "\n";
-    }
-    return 0;
-}
-// } Driver Code Ends
